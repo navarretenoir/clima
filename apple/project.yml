@@ -3,7 +3,7 @@
 # Desarrollado por Javiera Navarrete.
 name: Clima
 options:
-  bundleIdPrefix: cl.javieranavarrete
+  bundleIdPrefix: io.github.navarretenoir
   deploymentTarget: { iOS: "15.0", macOS: "11.0" }
   createIntermediateGroups: true
 settings:
@@ -22,7 +22,7 @@ targets:
     settings:
       base:
         PRODUCT_NAME: Clima
-        PRODUCT_BUNDLE_IDENTIFIER: cl.javieranavarrete.clima
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.navarretenoir.clima
         ARCHS: "$(ARCHS_STANDARD)"          # arm64 + x86_64: corre nativo en Apple Silicon e Intel
         ONLY_ACTIVE_ARCH: NO
         ENABLE_HARDENED_RUNTIME: YES
@@ -42,7 +42,7 @@ targets:
     settings:
       base:
         PRODUCT_NAME: Clima
-        PRODUCT_BUNDLE_IDENTIFIER: cl.javieranavarrete.clima
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.navarretenoir.clima
         TARGETED_DEVICE_FAMILY: "1,2"
     info:
       path: Recursos/Info-iOS.plist

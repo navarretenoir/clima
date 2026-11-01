@@ -20,7 +20,7 @@ mode="${1:-check}"
 
 # desktop-entry = el .desktop de la app: así GNOME asocia el aviso a Clima y muestra SU ícono en la
 # cabecera de la notificación (sin la pista salía un ícono genérico). Kotone 2026-10-31.
-notify(){ notify-send -a "Clima" -i "$ICON" -h string:desktop-entry:org.kotone.Clima -u "${3:-normal}" "$1" "$2"; }
+notify(){ notify-send -a "Clima" -i "$ICON" -h string:desktop-entry:io.github.navarretenoir.Clima -u "${3:-normal}" "$1" "$2"; }
 # dedupe: no repetir la misma notificación el mismo día
 seen(){ local key="$1" today; today=$(date +%F); [ "$(cat "$STATE_DIR/$key" 2>/dev/null)" = "$today" ]; }
 mark(){ date +%F > "$STATE_DIR/$1"; }
