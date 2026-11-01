@@ -18,10 +18,10 @@ $(BIN): $(SRC) clima_data.h clima_ambiental_c.inc
 
 # Módulos scraper — C++
 suspension-scraper: suspension_scraper.cpp
-	$(CXX) -O2 -std=c++17 suspension_scraper.cpp $(shell pkg-config --libs libcurl) -o $@
+	$(CXX) -O2 -std=c++17 $(EXTRA_CFLAGS) suspension_scraper.cpp $(shell pkg-config --libs libcurl) -o $@
 
 restriccion-scraper: restriccion_scraper.cpp
-	$(CXX) -O2 -std=c++17 restriccion_scraper.cpp $(shell pkg-config --libs libcurl) -o $@
+	$(CXX) -O2 -std=c++17 $(EXTRA_CFLAGS) restriccion_scraper.cpp $(shell pkg-config --libs libcurl) -o $@
 
 run: $(BIN)
 	./$(BIN)
