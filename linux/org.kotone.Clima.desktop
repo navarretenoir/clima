@@ -2,7 +2,7 @@
 Type=Application
 Name=Clima
 GenericName=Tiempo
-Comment=El tiempo para las comunas de Chile, con cielo animado
+Comment=App del tiempo centrada en Chile: sus 346 comunas, con cielo animado
 Comment[en]=Weather for every commune of Chile, with animated skies
 Exec=clima-app
 Icon=org.kotone.Clima

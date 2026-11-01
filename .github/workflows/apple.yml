@@ -4,6 +4,7 @@ on: [workflow_dispatch, push]
 jobs:
   compilar:
     runs-on: macos-15
+    defaults: { run: { working-directory: apple } }
     steps:
       - uses: actions/checkout@v4
       - uses: maxim-lobanov/setup-xcode@v1
