@@ -178,17 +178,12 @@ L
   echo "$(appimage_entorno | sed 's/\$HERE/$SNAP/g')" >> "$P/lanzar"
   echo "exec \"\$SNAP/usr/bin/$BIN_GUI\" \"\$@\"" >> "$P/lanzar"
   chmod +x "$P/lanzar"
-  local REPO_URL; REPO_URL=$(git -C "$APP" remote get-url origin 2>/dev/null | sed 's/\.git$//')
   cat > "$P/meta/snap.yaml" <<Y
 name: $PAQUETE
 version: '$VERSION'
 summary: '$RESUMEN'
 title: $NOMBRE
 license: GPL-3.0-or-later
-website: $REPO_URL
-source-code: $REPO_URL
-issues: $REPO_URL/issues
-contact: $REPO_URL/issues
 description: |
   $DESCRIPCION
   Desarrollado por Javiera Navarrete.
