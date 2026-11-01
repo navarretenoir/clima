@@ -1,0 +1,11 @@
+Clima para macOS e iOS — desarrollado por Javiera Navarrete.
+El tiempo para las 346 comunas de Chile con cielo animado, alertas ambientales, restricción vehicular y suspensión de clases.
+
+macOS 11+ (binario universal: Apple Silicon e Intel) e iOS/iPadOS 15+. Misma interfaz que Android y Linux, dentro de
+WKWebView (Comun/AnfitrionWeb.swift); configuración en Clima/Config.swift.
+
+Compilar en un Mac:  brew install xcodegen && ./preparar-web.sh && xcodegen generate && open Clima.xcodeproj
+  · macOS: esquema Clima-macOS → Product › Archive (firma «Sign to Run Locally» o tu ID de Apple).
+  · iOS: esquema Clima-iOS → elige tu iPhone; con un ID de Apple gratis la app dura 7 días (después se reinstala);
+    con la cuenta de desarrollador (USD 99/año) dura 1 año y se puede publicar en TestFlight/App Store.
+Sin Mac: el flujo .github/workflows/apple.yml compila ambas versiones (sin firmar) en un Mac de GitHub.

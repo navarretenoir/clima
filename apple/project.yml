@@ -1,0 +1,55 @@
+# Clima para macOS (Intel + Apple Silicon, binario universal) e iOS/iPadOS — proyecto XcodeGen.
+# Generar: brew install xcodegen && ./preparar-web.sh && xcodegen generate && open Clima.xcodeproj
+# Desarrollado por Javiera Navarrete.
+name: Clima
+options:
+  bundleIdPrefix: cl.javieranavarrete
+  deploymentTarget: { iOS: "15.0", macOS: "11.0" }
+  createIntermediateGroups: true
+settings:
+  base:
+    MARKETING_VERSION: "1.0.2"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.9"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+    INFOPLIST_KEY_NSHumanReadableCopyright: "© 2026 Javiera Navarrete. Desarrollado por Javiera Navarrete."
+targets:
+  Clima-macOS:
+    type: application
+    platform: macOS
+    sources: [Comun, Clima, { path: Recursos/web, type: folder, buildPhase: resources }, Recursos/Assets.xcassets]
+    settings:
+      base:
+        PRODUCT_NAME: Clima
+        PRODUCT_BUNDLE_IDENTIFIER: cl.javieranavarrete.clima
+        ARCHS: "$(ARCHS_STANDARD)"          # arm64 + x86_64: corre nativo en Apple Silicon e Intel
+        ONLY_ACTIVE_ARCH: NO
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_ENTITLEMENTS: Recursos/Clima.entitlements
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+    info:
+      path: Recursos/Info-macOS.plist
+      properties:
+        CFBundleDisplayName: Clima
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        NSHumanReadableCopyright: "© 2026 Javiera Navarrete"
+        NSLocationWhenInUseUsageDescription: "Clima usa tu ubicación aproximada para mostrar los datos de tu comuna o estación más cercana. No se guarda ni se comparte."
+  Clima-iOS:
+    type: application
+    platform: iOS
+    sources: [Comun, Clima, { path: Recursos/web, type: folder, buildPhase: resources }, Recursos/Assets.xcassets]
+    settings:
+      base:
+        PRODUCT_NAME: Clima
+        PRODUCT_BUNDLE_IDENTIFIER: cl.javieranavarrete.clima
+        TARGETED_DEVICE_FAMILY: "1,2"
+    info:
+      path: Recursos/Info-iOS.plist
+      properties:
+        CFBundleDisplayName: Clima
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        ITSAppUsesNonExemptEncryption: false
+        NSLocationWhenInUseUsageDescription: "Clima usa tu ubicación aproximada para mostrar los datos de tu comuna o estación más cercana. No se guarda ni se comparte."

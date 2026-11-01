@@ -1,0 +1,16 @@
+# Compila Clima para macOS (universal) e iOS en un Mac de GitHub (sin firma: para probar; firmar requiere cuenta de Apple).
+name: Clima Apple
+on: [workflow_dispatch, push]
+jobs:
+  compilar:
+    runs-on: macos-14
+    defaults: { run: { working-directory: apple } }
+    steps:
+      - uses: actions/checkout@v4
+      - run: brew install xcodegen
+      - run: ./preparar-web.sh && xcodegen generate
+      - run: xcodebuild -project Clima.xcodeproj -scheme Clima-macOS -configuration Release -destination 'generic/platform=macOS' CODE_SIGNING_ALLOWED=NO build SYMROOT=$PWD/build
+      - run: xcodebuild -project Clima.xcodeproj -scheme Clima-iOS -configuration Release -destination 'generic/platform=iOS' CODE_SIGNING_ALLOWED=NO build SYMROOT=$PWD/build
+      - run: lipo -info "build/Release/Clima.app/Contents/MacOS/Clima"
+      - uses: actions/upload-artifact@v4
+        with: { name: Clima-apple, path: "apple/build/Release*/*.app" }

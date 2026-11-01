@@ -1,0 +1,13 @@
+Clima muestra el tiempo actual, las próximas 24 horas y 10 días para cualquiera de las 346 comunas de Chile, con un cielo animado para cada condición, de día y de noche.
+
+Incluye:
+• Alerta ambiental por MP2,5 (umbrales oficiales del D.S. 12/2011).
+• Restricción vehicular en la zona que rige.
+• Suspensión de clases según lo publicado por el Mineduc (nunca inventa un decreto).
+• Fase lunar y mareas.
+• Notificaciones cuando hay alertas.
+
+Datos meteorológicos: Open-Meteo. Sin publicidad, sin rastreadores, sin cuentas.
+Funciona desde Android 5.0.
+
+Desarrollado por Javiera Navarrete.

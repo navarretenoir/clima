@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ícono adaptativo en capas (fondo + glifo con sombra y brillo), lenguaje de íconos de Apple. Kotone 2026-10-31 -->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@mipmap/ic_fondo" />
+    <foreground android:drawable="@mipmap/ic_glifo" />
+</adaptive-icon>

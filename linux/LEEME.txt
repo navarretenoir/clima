@@ -1,0 +1,11 @@
+Clima para Linux — desarrollado por Javiera Navarrete.
+
+Paquetes (dist/linux):
+  · clima-<v>-1.<fc>.x86_64.rpm   Fedora / RHEL / openSUSE:   sudo dnf install ./clima-*.rpm
+  · clima_<v>-1_amd64.deb         Debian 13 / Ubuntu 24.04+:  sudo apt install ./clima_*.deb
+  · Clima-<v>-x86_64.AppImage     cualquier distro con GTK 4 y WebKitGTK 6: chmod +x y ejecutar
+  · Clima-<v>.flatpak             flatpak install --user Clima-*.flatpak   (usa org.gnome.Platform 49 de Flathub)
+  · clima_<v>_amd64.snap          sudo snap install --dangerous clima_*.snap (requiere gnome-46-2404)
+Se instala en las rutas estándar: /usr/bin (clima, clima-app), /usr/share/clima (interfaz y comunas),
+/usr/libexec/clima (módulos Mineduc/restricción), lanzador en /usr/share/applications y ficha en /usr/share/metainfo.
+Comprobar integridad: sha256sum -c SHA256SUMS

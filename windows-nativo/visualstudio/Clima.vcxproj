@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Clima para Windows — proyecto de Visual Studio 2017/2019/2022. Desarrollado por Javiera Navarrete.
+     Toolset v141_xp (componente «Compatibilidad con Windows XP en C++» de VS 2017): genera ejecutables para XP → 11.
+     Para Windows 2000 y 95/98/Me la compilación oficial es la de MinGW (../Makefile, ../construir.sh), porque los
+     toolsets de Microsoft posteriores a VS 2008 ya no apuntan a esos sistemas. -->
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release NT|Win32"><Configuration>Release NT</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release 9x|Win32"><Configuration>Release 9x</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6E1B6C2A-3D0B-4E55-9C7A-4A6E2C1B9F10}</ProjectGuid>
+    <RootNamespace>Clima</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release NT'"><CharacterSet>Unicode</CharacterSet><TargetName>Clima</TargetName></PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release 9x'"><CharacterSet>MultiByte</CharacterSet><TargetName>Clima9x</TargetName></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup><OutDir>$(SolutionDir)..\dist\vs\</OutDir><IntDir>$(SolutionDir)..\build\vs\$(Configuration)\</IntDir></PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>WINVER=0x0501;_WIN32_WINNT=0x0501;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CompileAs>CompileAsC</CompileAs>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
+      <AdditionalDependencies>wininet.lib;gdi32.lib;user32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+    </Link>
+    <ResourceCompile Condition="'$(Configuration)'=='Release NT'"><PreprocessorDefinitions>UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions></ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\clima.c" />
+    <ClCompile Include="..\src\json.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\json.h" />
+    <ClInclude Include="..\src\recursos.h" />
+  </ItemGroup>
+  <ItemGroup><ResourceCompile Include="..\src\clima.rc" /></ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

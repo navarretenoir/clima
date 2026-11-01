@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Fondo del color del cielo nublado mientras carga la vista web (sin destello blanco). -->
+    <style name="Clima" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/cielo</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+    <color name="cielo">#3B5272</color>
+</resources>

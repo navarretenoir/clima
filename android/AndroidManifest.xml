@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Clima para Android (port de ~/Proyectos/CLIMA). Kotone 2026-10-31. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Now Bar de Samsung = Live Updates de Android 16 -->
+    <uses-permission android:name="android.permission.POST_PROMOTED_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <!-- ubicación «todo el tiempo»: los avisos de las 22:00 y 06:45 usan dónde estás, no la última consulta -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <!-- enlace con la app de la bici (ADO O260T): permiso de FIRMA, sólo apps con la misma llave.
+         Se declara igual en ambas apps para que el orden de instalación no importe. -->
+    <permission android:name="org.kotone.clima.permission.ALERTAS"
+        android:label="Alertas de Clima" android:protectionLevel="signature" />
+    <uses-permission android:name="org.kotone.clima.permission.ALERTAS" />
+    <queries>
+        <package android:name="com.bicipro.app" />
+        <package android:name="org.kotone.metro" />
+    </queries>
+
+    <application
+        android:label="Clima"
+        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="false"
+        android:theme="@style/Clima">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- avisos: alarma → JobService con red; el receptor también re-arma tras reinicio/actualización -->
+        <receiver android:name=".Avisos$Disparo" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.app.action.SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <provider android:name=".ClimaProveedor" android:authorities="org.kotone.clima.alertas"
+            android:exported="true" android:permission="org.kotone.clima.permission.ALERTAS" />
+        <service android:name=".Ahora" android:exported="false" android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service android:name=".Avisos" android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+    </application>
+</manifest>

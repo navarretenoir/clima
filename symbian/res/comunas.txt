@@ -1,0 +1,346 @@
+Aisen|Aysén|-45.9887|-73.7735
+Algarrobo|Valparaíso|-33.3300|-71.6005
+Alhue|Región Metropolitana|-34.0430|-71.0566
+Alto Biobio|Biobío|-37.8654|-71.3474
+Alto Hospicio|Tarapacá|-20.1913|-70.0119
+Alto del Carmen|Atacama|-28.9935|-70.1530
+Ancud|Los Lagos|-42.0176|-73.8022
+Andacollo|Coquimbo|-30.2606|-71.1005
+Angol|La Araucanía|-37.7691|-72.7954
+Antofagasta|Antofagasta|-24.2739|-69.4097
+Antuco|Biobío|-37.3277|-71.3666
+Arauco|Biobío|-37.2886|-73.3994
+Arica|Arica y Parinacota|-18.5377|-69.9746
+Buin|Región Metropolitana|-33.7481|-70.7393
+Bulnes|Ñuble|-36.7905|-72.2901
+Cabildo|Valparaíso|-32.4174|-70.8243
+Cabo de Hornos|Magallanes|-55.0225|-69.2283
+Cabrero|Biobío|-37.0621|-72.3814
+Calama|Antofagasta|-22.1639|-68.6295
+Calbuco|Los Lagos|-41.7231|-73.1951
+Caldera|Atacama|-27.1423|-70.6838
+Calera|Valparaíso|-32.8077|-71.1881
+Calera de Tango|Región Metropolitana|-33.6234|-70.7904
+Calle Larga|Valparaíso|-32.9504|-70.5450
+Camarones|Arica y Parinacota|-18.9300|-69.6990
+Camiña|Tarapacá|-19.3737|-69.5056
+Canela|Coquimbo|-31.4019|-71.3944
+Carahue|La Araucanía|-38.6109|-73.2698
+Cartagena|Valparaíso|-33.5338|-71.4424
+Casablanca|Valparaíso|-33.3158|-71.4353
+Castro|Los Lagos|-42.4741|-73.8041
+Catemu|Valparaíso|-32.7073|-70.9452
+Cauquenes|Maule|-35.9714|-72.2800
+Cañete|Biobío|-37.8741|-73.3177
+Cerrillos|Región Metropolitana|-33.5003|-70.7174
+Cerro Navia|Región Metropolitana|-33.4228|-70.7450
+Chaiten|Los Lagos|-43.0941|-72.5759
+Chanco|Maule|-35.6988|-72.4849
+Chañaral|Atacama|-26.3737|-70.3383
+Chepica|O'Higgins|-34.7913|-71.3593
+Chiguayante|Biobío|-36.9008|-73.0050
+Chile Chico|Aysén|-46.7668|-72.5847
+Chilean Antarctic Territory|Magallanes|-75.0009|-71.5931
+Chillan|Ñuble|-36.6288|-72.0496
+Chillán Viejo|Ñuble|-36.6803|-72.1990
+Chimbarongo|O'Higgins|-34.7517|-70.9811
+Cholchol|La Araucanía|-38.5832|-72.9019
+Chonchi|Los Lagos|-42.6821|-73.9306
+Cisnes|Aysén|-44.4577|-73.1374
+Cobquecura|Ñuble|-36.1811|-72.7210
+Cochamo|Los Lagos|-41.7611|-72.0929
+Cochrane|Aysén|-47.3601|-72.7418
+Codegua|O'Higgins|-34.0574|-70.5472
+Coelemu|Ñuble|-36.5051|-72.7503
+Coihueco|Ñuble|-36.7021|-71.5811
+Coinco|O'Higgins|-34.2822|-70.9711
+Colbun|Maule|-36.0777|-70.9783
+Colchane|Tarapacá|-19.3531|-68.8470
+Colina|Región Metropolitana|-33.1342|-70.6157
+Collipulli|La Araucanía|-38.0318|-72.1152
+Coltauco|O'Higgins|-34.2600|-71.0779
+Combarbala|Coquimbo|-31.1469|-70.9657
+Concepción|Biobío|-36.8200|-73.0445
+Conchali|Región Metropolitana|-33.3837|-70.6774
+Concon|Valparaíso|-32.9534|-71.4678
+Constitucion|Maule|-35.3631|-72.2762
+Contulmo|Biobío|-38.0527|-73.2124
+Copiapo|Atacama|-27.3202|-69.8277
+Coquimbo|Coquimbo|-30.2288|-71.3598
+Coronel|Biobío|-37.0070|-73.1252
+Corral|Los Ríos|-39.9849|-73.3715
+Coyhaique|Aysén|-45.5539|-71.9913
+Cunco|La Araucanía|-38.9770|-71.9917
+Curacautin|La Araucanía|-38.4326|-71.7711
+Curacavi|Región Metropolitana|-33.3664|-71.0802
+Curaco de Velez|Los Lagos|-42.4267|-73.5787
+Curanilahue|Biobío|-37.4830|-73.2351
+Curarrehue|La Araucanía|-39.3358|-71.5393
+Curepto|Maule|-35.1297|-71.9533
+Curico|Maule|-35.1991|-70.8957
+Dalcahue|Los Lagos|-42.3090|-73.8337
+Diego de Almagro|Atacama|-26.2373|-69.1873
+Doñihue|O'Higgins|-34.1970|-70.9236
+El Bosque|Región Metropolitana|-33.5629|-70.6764
+El Carmen|Ñuble|-36.9251|-71.8469
+El Monte|Región Metropolitana|-33.6671|-71.0324
+El Quisco|Valparaíso|-33.4161|-71.6512
+El Tabo|Valparaíso|-33.4586|-71.6619
+Empedrado|Maule|-35.6135|-72.2843
+Ercilla|La Araucanía|-38.0828|-72.3535
+Estacion Central|Región Metropolitana|-33.4645|-70.6986
+Florida|Biobío|-36.8224|-72.7177
+Freire|La Araucanía|-38.9496|-72.5758
+Freirina|Atacama|-28.8442|-71.1954
+Fresia|Los Lagos|-41.1544|-73.6065
+Frutillar|Los Lagos|-41.0872|-73.0956
+Futaleufu|Los Lagos|-43.1812|-72.0071
+Futrono|Los Ríos|-40.1189|-72.1154
+Galvarino|La Araucanía|-38.4479|-72.7912
+General Lagos|Arica y Parinacota|-17.8286|-69.5749
+Gorbea|La Araucanía|-39.1717|-72.6692
+Graneros|O'Higgins|-34.0657|-70.7470
+Guaitecas|Aysén|-43.8665|-74.0516
+Hijuelas|Valparaíso|-32.8693|-71.0816
+Huailaihue|Los Lagos|-42.1772|-72.3769
+Hualañe|Maule|-34.9525|-71.7090
+Hualpén|Biobío|-36.7869|-73.1052
+Hualqui|Biobío|-37.0447|-72.8704
+Huara|Tarapacá|-19.5359|-69.9848
+Huasco|Atacama|-28.2584|-71.0178
+Huechuraba|Región Metropolitana|-33.3603|-70.6375
+Illapel|Coquimbo|-31.5493|-70.9706
+Independencia|Región Metropolitana|-33.4151|-70.6658
+Iquique|Tarapacá|-20.9409|-70.0412
+Isla de Maipo|Región Metropolitana|-33.7485|-70.9457
+Isla de Pascua|Valparaíso|-27.1288|-109.3600
+Juan Fernández|Valparaíso|-33.6387|-78.8583
+La Cisterna|Región Metropolitana|-33.5302|-70.6642
+La Cruz|Valparaíso|-32.8251|-71.2413
+La Estrella|O'Higgins|-34.2233|-71.6026
+La Florida|Región Metropolitana|-33.5286|-70.5396
+La Granja|Región Metropolitana|-33.5354|-70.6223
+La Higuera|Coquimbo|-29.3749|-70.9014
+La Ligua|Valparaíso|-32.3537|-71.2721
+La Pintana|Región Metropolitana|-33.5843|-70.6376
+La Reina|Región Metropolitana|-33.4486|-70.5358
+La Serena|Coquimbo|-29.7892|-71.0612
+La Union|Los Ríos|-40.2013|-73.2223
+Lago Ranco|Los Ríos|-40.3732|-72.1658
+Lago Verde|Aysén|-44.4923|-71.8323
+Laguna Blanca|Magallanes|-52.3294|-71.2398
+Laja|Biobío|-37.3125|-72.5825
+Lampa|Región Metropolitana|-33.2778|-70.8748
+Lanco|Los Ríos|-39.5121|-72.6215
+Las Cabras|O'Higgins|-34.1650|-71.3327
+Las Condes|Región Metropolitana|-33.4207|-70.5019
+Lautaro|La Araucanía|-38.5432|-72.2894
+Lebu|Biobío|-37.6778|-73.5906
+Licanten|Maule|-34.9743|-72.0603
+Limache|Valparaíso|-33.0309|-71.2793
+Linares|Maule|-35.9581|-71.3321
+Litueche|O'Higgins|-34.1074|-71.7336
+Llaillay|Valparaíso|-32.8879|-70.9024
+Llanquihue|Los Lagos|-41.2381|-73.1396
+Lo Barnechea|Región Metropolitana|-33.2991|-70.3687
+Lo Espejo|Región Metropolitana|-33.5209|-70.6901
+Lo Prado|Región Metropolitana|-33.4473|-70.7235
+Lolol|O'Higgins|-34.7684|-71.6484
+Loncoche|La Araucanía|-39.3561|-72.5825
+Longavi|Maule|-36.1107|-71.4412
+Lonquimay|La Araucanía|-38.4747|-71.2392
+Los Alamos|Biobío|-37.6736|-73.3569
+Los Andes|Valparaíso|-32.9503|-70.2399
+Los Angeles|Biobío|-37.4079|-72.3277
+Los Lagos|Los Ríos|-39.8784|-72.5546
+Los Muermos|Los Lagos|-41.3980|-73.5826
+Los Sauces|La Araucanía|-37.9832|-72.7968
+Los Vilos|Coquimbo|-31.9778|-71.3041
+Lota|Biobío|-37.1195|-73.1049
+Lumaco|La Araucanía|-38.2871|-73.0459
+Machali|O'Higgins|-34.3207|-70.3196
+Macul|Región Metropolitana|-33.4902|-70.6011
+Mafil|Los Ríos|-39.6920|-72.8638
+Maipú|Región Metropolitana|-33.5066|-70.8123
+Malloa|O'Higgins|-34.4762|-70.8734
+Marchihue|O'Higgins|-34.3727|-71.6716
+Maria Elena|Antofagasta|-22.0904|-69.4613
+Maria Pinto|Región Metropolitana|-33.4981|-71.2108
+Mariquina|Los Ríos|-39.5131|-73.0196
+Maule|Maule|-35.5085|-71.7126
+Maullín|Los Lagos|-41.6324|-73.5083
+Mejillones|Antofagasta|-22.9360|-70.1986
+Melipeuco|La Araucanía|-38.8248|-71.6110
+Melipilla|Región Metropolitana|-33.7439|-71.1940
+Molina|Maule|-35.3534|-70.9095
+Monte Patria|Coquimbo|-30.8352|-70.6509
+Mostazal|O'Higgins|-33.9560|-70.5694
+Mulchén|Biobío|-37.8384|-72.0972
+Nacimiento|Biobío|-37.4856|-72.8236
+Nancagua|O'Higgins|-34.6678|-71.1919
+Natales|Magallanes|-50.6742|-73.9259
+Navidad|O'Higgins|-34.0123|-71.8203
+Negrete|Biobío|-37.6083|-72.5766
+Ninhue|Ñuble|-36.3568|-72.4097
+Nogales|Valparaíso|-32.6915|-71.1768
+Nueva Imperial|La Araucanía|-38.7509|-72.9725
+O Higgins|Aysén|-48.4862|-72.9106
+Olivar|O'Higgins|-34.2116|-70.8201
+Ollague|Antofagasta|-21.4566|-68.3134
+Olmue|Valparaíso|-33.0358|-71.1107
+Osorno|Los Lagos|-40.6108|-73.0877
+Ovalle|Coquimbo|-30.6740|-71.4062
+Padre Hurtado|Región Metropolitana|-33.5572|-70.8708
+Padre Las Casas|La Araucanía|-38.7920|-72.5793
+Paihuano|Coquimbo|-30.2384|-70.3707
+Paillaco|Los Ríos|-40.0741|-72.8436
+Paine|Región Metropolitana|-33.8637|-70.7581
+Palena|Los Lagos|-43.6824|-71.9834
+Palmilla|O'Higgins|-34.5282|-71.3529
+Panguipulli|Los Ríos|-39.7146|-72.0299
+Panquehue|Valparaíso|-32.7938|-70.8290
+Papudo|Valparaíso|-32.5075|-71.4431
+Paredones|O'Higgins|-34.6733|-71.9112
+Parral|Maule|-36.2623|-71.6450
+Pedro Aguirre Cerda|Región Metropolitana|-33.4919|-70.6762
+Pelarco|Maule|-35.3832|-71.3506
+Pelluhue|Maule|-35.9115|-72.6076
+Pemuco|Ñuble|-36.9830|-72.0675
+Pencahue|Maule|-35.3277|-71.8171
+Penco|Biobío|-36.7484|-72.9437
+Peralillo|O'Higgins|-34.4662|-71.4967
+Perquenco|La Araucanía|-38.4283|-72.4365
+Petorca|Valparaíso|-32.1903|-70.8704
+Peumo|O'Higgins|-34.3294|-71.2219
+Peñaflor|Región Metropolitana|-33.6109|-70.8940
+Peñalolen|Región Metropolitana|-33.4862|-70.5249
+Pica|Tarapacá|-20.4796|-68.9119
+Pichidegua|O'Higgins|-34.3712|-71.3394
+Pichilemu|O'Higgins|-34.3841|-71.9107
+Pinto|Ñuble|-36.9214|-71.4994
+Pirque|Región Metropolitana|-33.7186|-70.5066
+Pitrufquen|La Araucanía|-39.1050|-72.9019
+Placilla|O'Higgins|-34.6192|-71.0862
+Portezuelo|Ñuble|-36.5464|-72.4665
+Porvenir|Magallanes|-53.3040|-69.3928
+Pozo Almonte|Tarapacá|-20.7702|-69.5045
+Primavera|Magallanes|-52.8202|-69.3335
+Providencia|Región Metropolitana|-33.4362|-70.6090
+Puchuncavi|Valparaíso|-32.7176|-71.4111
+Pucon|La Araucanía|-39.2702|-71.7905
+Pudahuel|Región Metropolitana|-33.4240|-70.8549
+Puente Alto|Región Metropolitana|-33.5910|-70.5575
+Puerto Montt|Los Lagos|-41.4892|-72.7953
+Puerto Octay|Los Lagos|-40.9336|-72.5994
+Puerto Varas|Los Lagos|-41.1914|-72.3881
+Pumanque|O'Higgins|-34.5962|-71.6915
+Punitaqui|Coquimbo|-30.9463|-71.3331
+Punta Arenas|Magallanes|-53.6415|-72.0385
+Puqueldon|Los Lagos|-42.6270|-73.6369
+Puren|La Araucanía|-38.0121|-73.0504
+Purranque|Los Lagos|-40.9351|-73.4583
+Putaendo|Valparaíso|-32.4808|-70.5214
+Putre|Arica y Parinacota|-18.4287|-69.3116
+Puyehue|Los Lagos|-40.7255|-72.3841
+Queilen|Los Lagos|-42.8557|-73.5644
+Quellon|Los Lagos|-43.1518|-73.9954
+Quemchi|Los Lagos|-42.1339|-73.5172
+Quilaco|Biobío|-37.9820|-71.5973
+Quilicura|Región Metropolitana|-33.3554|-70.7361
+Quilleco|Biobío|-37.4368|-71.8614
+Quillon|Ñuble|-36.8186|-72.5017
+Quillota|Valparaíso|-32.9046|-71.2730
+Quilpue|Valparaíso|-33.1473|-71.2543
+Quinchao|Los Lagos|-42.6446|-73.2776
+Quinta Normal|Región Metropolitana|-33.4284|-70.7008
+Quinta de Tilcoco|O'Higgins|-34.3592|-70.9982
+Quintero|Valparaíso|-32.8430|-71.4738
+Quirihue|Ñuble|-36.2819|-72.5441
+Rancagua|O'Higgins|-34.1261|-70.8166
+Ranquil|Ñuble|-36.6406|-72.5878
+Rauco|Maule|-34.9382|-71.4264
+Recoleta|Región Metropolitana|-33.4088|-70.6364
+Renaico|La Araucanía|-37.7178|-72.5757
+Renca|Región Metropolitana|-33.4021|-70.7279
+Rengo|O'Higgins|-34.4547|-70.7185
+Requinoa|O'Higgins|-34.3350|-70.6591
+Retiro|Maule|-36.0023|-71.8293
+Rinconada|Valparaíso|-32.8760|-70.7068
+Rio Bueno|Los Ríos|-40.4959|-72.5357
+Rio Claro|Maule|-35.2609|-71.2695
+Rio Hurtado|Coquimbo|-30.2667|-70.6667
+Rio Ibañez|Aysén|-46.2993|-72.4866
+Rio Negro|Los Lagos|-40.7702|-73.4175
+Rio Verde|Magallanes|-52.8467|-72.4633
+Romeral|Maule|-35.0683|-70.7112
+Saavedra|La Araucanía|-38.8325|-73.2955
+Sagrada Familia|Maule|-35.1043|-71.4959
+Salamanca|Coquimbo|-31.8931|-70.6608
+San Antonio|Valparaíso|-33.5710|-71.6096
+San Bernardo|Región Metropolitana|-33.6289|-70.7243
+San Carlos|Ñuble|-36.3856|-72.0186
+San Clemente|Maule|-35.7121|-70.8485
+San Esteban|Valparaíso|-32.6859|-70.3483
+San Fabian|Ñuble|-36.5799|-71.2874
+San Felipe|Valparaíso|-32.7364|-70.7537
+San Fernando|O'Higgins|-34.7433|-70.6033
+San Gregorio|Magallanes|-52.3223|-70.2272
+San Ignacio|Ñuble|-36.8225|-72.0298
+San Javier|Maule|-35.6290|-71.9271
+San Joaquin|Región Metropolitana|-33.4963|-70.6288
+San Jose de Maipo|Región Metropolitana|-33.7048|-70.0969
+San Juan de la Costa|Los Lagos|-40.5086|-73.5594
+San Miguel|Región Metropolitana|-33.4991|-70.6517
+San Nicolás|Ñuble|-36.4798|-72.2282
+San Pablo|Los Lagos|-40.4267|-73.1621
+San Pedro|Región Metropolitana|-33.9318|-71.4529
+San Pedro de Atacama|Antofagasta|-23.4011|-67.9111
+San Pedro de la Paz|Biobío|-36.8408|-73.1031
+San Rafael|Maule|-35.3019|-71.5011
+San Ramon|Región Metropolitana|-33.5314|-70.6422
+San Rosendo|Biobío|-37.2130|-72.7211
+San Vicente|O'Higgins|-34.4778|-71.1233
+Santa Barbara|Biobío|-37.6230|-71.7492
+Santa Cruz|O'Higgins|-34.6432|-71.4025
+Santa Juana|Biobío|-37.2764|-72.9598
+Santa Maria|Valparaíso|-32.6855|-70.6103
+Santiago|Región Metropolitana|-33.4541|-70.6560
+Santo Domingo|Valparaíso|-33.8093|-71.6766
+Sierra Gorda|Antofagasta|-23.2542|-69.3072
+Talagante|Región Metropolitana|-33.6823|-70.8951
+Talca|Maule|-35.4280|-71.6028
+Talcahuano|Biobío|-36.7434|-73.0982
+Taltal|Antofagasta|-25.3136|-69.8657
+Temuco|La Araucanía|-38.6731|-72.6633
+Teno|Maule|-34.8879|-71.0224
+Teodoro Schmidt|La Araucanía|-38.9848|-73.1147
+Tierra Amarilla|Atacama|-27.8657|-69.6720
+Tiltil|Región Metropolitana|-33.0624|-70.8760
+Timaukel|Magallanes|-54.1950|-69.5323
+Tirúa|Biobío|-38.2975|-73.3957
+Tocopilla|Antofagasta|-22.0020|-70.0146
+Tolten|La Araucanía|-39.2121|-73.0784
+Tome|Biobío|-36.6171|-72.8580
+Torres del Paine|Magallanes|-51.0503|-72.8295
+Tortel|Aysén|-48.0271|-74.1592
+Traiguen|La Araucanía|-38.2471|-72.6551
+Treguaco|Ñuble|-36.4281|-72.6595
+Tucapel|Biobío|-37.2253|-71.7455
+Valdivia|Los Ríos|-39.8178|-73.1751
+Vallenar|Atacama|-28.5948|-70.6025
+Valparaíso|Valparaíso|-33.1298|-71.5735
+Vichuquén|Maule|-34.8410|-72.0228
+Victoria|La Araucanía|-38.2805|-72.2340
+Vicuña|Coquimbo|-29.8920|-70.3827
+Vilcun|La Araucanía|-38.7047|-72.1136
+Villa Alegre|Maule|-35.6853|-71.6829
+Villa Alemana|Valparaíso|-33.0679|-71.3304
+Villarrica|La Araucanía|-39.3009|-72.1822
+Vitacura|Región Metropolitana|-33.3799|-70.5724
+Viña del Mar|Valparaíso|-33.0288|-71.5159
+Yerbas Buenas|Maule|-35.6892|-71.5444
+Yumbel|Biobío|-37.0884|-72.6159
+Yungay|Ñuble|-37.1044|-71.9308
+Zapallar|Valparaíso|-32.5549|-71.4547
+Ñiquen|Ñuble|-36.3024|-71.8974
+Ñuñoa|Región Metropolitana|-33.4593|-70.6003
