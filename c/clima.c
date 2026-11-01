@@ -152,7 +152,7 @@ static void do_locate (void) {
     geo_cancel = g_cancellable_new ();
     geo_pending = TRUE;
     geo_tid = g_timeout_add_seconds (6, geo_timeout, NULL);
-    gclue_simple_new ("org.kotone.Clima", GCLUE_ACCURACY_LEVEL_CITY, geo_cancel, geo_done, NULL);
+    gclue_simple_new ("io.github.navarretenoir.Clima", GCLUE_ACCURACY_LEVEL_CITY, geo_cancel, geo_done, NULL);
 }
 
 /* recuadro «Metro»: estado oficial en un hilo (no bloquea la ventana) → window.onMetro(json) */
@@ -312,7 +312,7 @@ int main (int argc, char **argv) {
     for (int i = 1; i < argc; i++) if (!strcmp (argv[i], "--gui")) gui = TRUE;
     if (!gui) return clima_cli_run (argc, argv);
 
-    APP.app = adw_application_new ("org.kotone.Clima", G_APPLICATION_DEFAULT_FLAGS);
+    APP.app = adw_application_new ("io.github.navarretenoir.Clima", G_APPLICATION_DEFAULT_FLAGS);
     g_signal_connect (APP.app, "activate", G_CALLBACK (activate), NULL);
     int status = g_application_run (G_APPLICATION (APP.app), 1, argv);  /* no pasar --gui al parser */
     g_object_unref (APP.app);

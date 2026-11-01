@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>org.kotone.Clima</id>
+  <id>io.github.navarretenoir.Clima</id>
   <name>Clima</name>
   <summary>Aplicación del clima de Chile: sus 346 comunas, con cielo animado</summary>
+  <summary xml:lang="en">Weather app for Chile: all 346 communes, with animated skies</summary>
   <developer id="cl.javieranavarrete"><name>Javiera Navarrete</name></developer>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
@@ -12,8 +13,12 @@
     <p>Incluye alerta ambiental por MP2,5, restricción vehicular, aviso de riesgo de suspensión de clases, fase lunar y mareas.
        Datos de Open-Meteo. Sin publicidad ni rastreo.</p>
     <p>Desarrollado por Javiera Navarrete.</p>
+    <p xml:lang="en">Clima is a weather app for Chile: current conditions, 24-hour and 10-day forecast for all 346 communes, with an animated sky for every condition. It adds PM2.5 environmental alerts, the Santiago driving restriction, official school-closure notices, moon phase and tides. No ads, no trackers. Developed by Javiera Navarrete.</p>
   </description>
-  <launchable type="desktop-id">org.kotone.Clima.desktop</launchable>
+  <url type="homepage">https://github.com/navarretenoir/clima</url>
+  <url type="vcs-browser">https://gitlab.com/navarretenoir/clima</url>
+  <url type="bugtracker">https://gitlab.com/navarretenoir/clima/-/issues</url>
+  <launchable type="desktop-id">io.github.navarretenoir.Clima.desktop</launchable>
   <provides><binary>clima</binary><binary>clima-app</binary></provides>
   <content_rating type="oars-1.1"/>
   <releases><release version="1.0.2" date="2026-10-31"/></releases>

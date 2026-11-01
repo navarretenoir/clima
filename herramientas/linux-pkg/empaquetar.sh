@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Empaquetado Linux de las apps GTK4/WebKitGTK de Javiera (Kotone 2026-10-31): RPM, DEB, AppImage, Flatpak y Snap.
 # Cada app trae linux/app.conf (variables abajo) y llama:  empaquetar.sh <dir app> [rpm|deb|appimage|flatpak|snap|todo]
-#   APP_ID  PAQUETE  NOMBRE  VERSION  RESUMEN  DESCRIPCION  BIN_GUI(nombre en /usr/bin)
+#   APP_ID  PAQUETE  NOMBRE  VERSION  RESUMEN  DESCRIPCION  BIN_GUI(nombre en /usr/bin)  [FLATPAK_ID]
 #   compilar <prefijo> <dirsalida>   (función: compila con rutas bajo <prefijo> y deja binarios en <dirsalida>)
 #   instalar <stage> <prefijo> <binarios>  (función: copia todo al árbol <stage><prefijo>/…)
 #   DEPS_RPM  DEPS_DEB  (dependencias de ejecución)
@@ -131,16 +131,25 @@ RUN
 # ------------------------------------------------------------------ Flatpak — binario de Ubuntu 24.04 sobre org.gnome.Platform 49 (trae WebKitGTK 6)
 hacer_flatpak() {
   local F="$TMP/flatpak" B="$TMP/flatpak-bin" REPO="$TMP/flatpak-repo"
-  rm -rf "$F" "$B"; mkdir -p "$B"
+  # Flathub exige un ID con dominio propio: FLATPAK_ID (io.github.navarretenoir.*) en app.conf; los demás formatos siguen con APP_ID
+  local FID="${FLATPAK_ID:-$APP_ID}"
+  rm -rf "$F" "$B" "$REPO"; mkdir -p "$B"
   en_caja $UBUNTU_BOX "compilar /app '$B'"
-  flatpak build-init "$F" "$APP_ID" org.gnome.Sdk org.gnome.Platform 49 2>/dev/null \
-    || flatpak build-init "$F" "$APP_ID" org.gnome.Platform org.gnome.Platform 49
+  flatpak build-init "$F" "$FID" org.gnome.Sdk org.gnome.Platform 49 2>/dev/null \
+    || flatpak build-init "$F" "$FID" org.gnome.Platform org.gnome.Platform 49
   arbol "$F/files" "" "$B"
+  if [ "$FID" != "$APP_ID" ]; then
+    local S="$F/files/share" f
+    for f in $(find "$S" -name "$APP_ID.*"); do mv "$f" "$(dirname "$f")/$FID.${f##*/$APP_ID.}"; done
+    sed -i "s|^Icon=$APP_ID\$|Icon=$FID|" "$S/applications/$FID.desktop"
+    grep -q '^StartupWMClass=' "$S/applications/$FID.desktop" || echo "StartupWMClass=$APP_ID" >> "$S/applications/$FID.desktop"
+    sed -i "s|<id>$APP_ID</id>|<id>$FID</id>|; s|>$APP_ID.desktop<|>$FID.desktop<|" "$S/metainfo/$FID.metainfo.xml"
+  fi
   # build-finish exige que el lanzador apunte a un comando existente en /app/bin
   flatpak build-finish "$F" --command="$BIN_GUI" --share=network --share=ipc --socket=wayland --socket=fallback-x11 \
     --device=dri $FLATPAK_EXTRA >/dev/null
   flatpak build-export "$REPO" "$F" stable
-  flatpak build-bundle "$REPO" "$OUT/$NOMBRE_ARCHIVO-$VERSION.flatpak" "$APP_ID" stable \
+  flatpak build-bundle "$REPO" "$OUT/$NOMBRE_ARCHIVO-$VERSION.flatpak" "$FID" stable \
     --runtime-repo=https://dl.flathub.org/repo/flathub.flatpakrepo
   echo "✔ Flatpak: $OUT/$NOMBRE_ARCHIVO-$VERSION.flatpak"
 }
