@@ -25,3 +25,18 @@ Sin publicidad, sin rastreadores, sin cuentas.
 - Restricción vehicular: [airerm.mma.gob.cl](https://airerm.mma.gob.cl).
 
 Tipografía Inter (SIL Open Font License, ver `android/web/fonts/OFL-Inter.txt`).
+
+
+---
+
+## English
+
+**Clima** is a weather app for Chile: current conditions, 24-hour and 10-day forecast for all 346 Chilean communes, with an
+animated sky for every condition, day and night. It adds Chile-specific information: PM2.5 environmental alerts (official
+thresholds), the Santiago driving restriction, school-closure notices as published by the Ministry of Education (it never claims an
+unpublished decree), moon phase and tides. No ads, no trackers, no accounts.
+
+Platforms: Android 5.0+, Linux (RPM, DEB, AppImage, Flatpak, Snap), Windows 95/98/Me and 2000 → 11, macOS (Intel and Apple Silicon),
+iOS/iPadOS and Symbian / Java ME. The interface is in Spanish (Chile).
+
+**Developed by Javiera Navarrete** · License [GPL-3.0-or-later](LICENSE). Data: Open-Meteo (CC BY 4.0), Mineduc, airerm.mma.gob.cl.
