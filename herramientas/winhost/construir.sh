@@ -24,7 +24,7 @@ distrobox enter empaquetar -- bash -c "
   i686-w64-mingw32-gcc -Os -std=gnu99 -municode -mwindows -DUNICODE -D_UNICODE -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 \
     -I'$WV/include' -I'$K/include' -Isrc -Wall -Wno-unused-function -Wno-cast-function-type -Wno-incompatible-pointer-types \
     -o 'dist/$EXE.exe' src/webhost.c build/app.o -s -static-libgcc -Wl,--nxcompat -Wl,--dynamicbase \
-    -lole32 -loleaut32 -lshell32 -lshlwapi -lwinhttp -luuid -luser32 -lgdi32 -lkernel32
+    -lole32 -loleaut32 -lshell32 -lshlwapi -lwinhttp -luuid -lcomdlg32 -luser32 -lgdi32 -lkernel32
   cd instalador && makensis -V2 app.nsi
   cd ../dist && sha256sum '$EXE.exe' WebView2Loader.dll '$EXE-$VERSION-instalador.exe' > SHA256SUMS.txt
 "
