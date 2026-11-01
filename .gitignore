@@ -1,0 +1,7 @@
+build/
+dist/
+.gradle/
+local.properties
+*.apk
+*.bak*
+apple/Recursos/web/

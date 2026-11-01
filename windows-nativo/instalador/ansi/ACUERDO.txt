@@ -1,0 +1,21 @@
+ACUERDO DE USO — CLIMA
+Desarrollado por Javiera Navarrete · Versión 1.0.2 · 2026
+
+1. Uso. Puedes instalar y usar Clima sin costo en los equipos que quieras, para fines personales o
+   profesionales. Puedes compartir el instalador original sin modificarlo, citando a su autora.
+
+2. Qué hace el programa. Clima muestra el pronóstico del tiempo de la comuna de Chile que elijas.
+   Para eso se conecta a Open-Meteo (api.open-meteo.com) y envía únicamente la latitud y longitud de esa
+   comuna. No envía datos personales, no tiene publicidad, no instala otros programas, no se inicia solo
+   con Windows y no modifica el sistema fuera de su carpeta, su acceso directo y su clave de registro
+   (HKEY_CURRENT_USER\Software\Javiera Navarrete\Clima, donde guarda la comuna y el último pronóstico).
+
+3. Datos meteorológicos. Los datos provienen de Open-Meteo bajo licencia CC BY 4.0. Son pronósticos:
+   pueden equivocarse. Ante emergencias sigue siempre los canales oficiales (SENAPRED, DMC, Mineduc).
+
+4. Sin garantía. El programa se entrega «tal cual», sin garantías de ningún tipo. La autora no responde
+   por daños derivados de su uso, en la medida que la ley lo permita.
+
+5. Desinstalación. Puedes quitarlo cuando quieras desde «Agregar o quitar programas» / «Aplicaciones».
+
+Al hacer clic en «Acepto» declaras haber leído este acuerdo.

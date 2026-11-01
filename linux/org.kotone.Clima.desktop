@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=Clima
+GenericName=Tiempo
+Comment=El tiempo para las comunas de Chile, con cielo animado
+Comment[en]=Weather for every commune of Chile, with animated skies
+Exec=clima-app
+Icon=org.kotone.Clima
+Terminal=false
+Categories=Utility;GTK;
+Keywords=clima;tiempo;pronóstico;lluvia;chile;weather;
+StartupWMClass=org.kotone.Clima
+StartupNotify=true
+X-Developer=Javiera Navarrete

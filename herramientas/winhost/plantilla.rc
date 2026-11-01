@@ -1,0 +1,30 @@
+/* Recursos — @NOMBRE@ para Windows. Desarrollado por Javiera Navarrete */
+#include <windows.h>
+1 ICON "app.ico"
+1 24 "app.manifest"
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION     @VERCOMAS@
+ PRODUCTVERSION  @VERCOMAS@
+ FILEOS          VOS__WINDOWS32
+ FILETYPE        VFT_APP
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "340A04B0"
+    BEGIN
+      VALUE "CompanyName",      "Javiera Navarrete"
+      VALUE "FileDescription",  "@DESCRIPCION@"
+      VALUE "FileVersion",      "@VERSION@"
+      VALUE "InternalName",     "@EXE@"
+      VALUE "LegalCopyright",   "(c) 2026 Javiera Navarrete"
+      VALUE "OriginalFilename", "@EXE@.exe"
+      VALUE "ProductName",      "@NOMBRE@"
+      VALUE "ProductVersion",   "@VERSION@"
+      VALUE "Comments",         "Desarrollado por Javiera Navarrete."
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x340A, 1200
+  END
+END

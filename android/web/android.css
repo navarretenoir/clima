@@ -1,0 +1,29 @@
+/* Clima Android — ajustes sobre style.css: pantalla de borde a borde (márgenes del sistema que manda
+   el host Java en --sat/--sab) y toque en vez de cursor. Kotone 2026-10-31. */
+#app{padding-top:calc(10px + var(--sat,24px));padding-bottom:calc(36px + var(--sab,0px))}
+.sheet-h{padding-top:calc(12px + var(--sat,24px))}
+.sheet-body{padding-bottom:calc(40px + var(--sab,0px))}
+#pull{top:var(--sat,24px)}
+#loadbar{top:var(--sat,24px)}
+html{-webkit-tap-highlight-color:transparent}
+.day:hover,.sug:hover,.searchbar button:hover{background:inherit}
+.day:active{background:rgba(255,255,255,.10)}
+/* SF Pro sólo se licencia para plataformas Apple: en Android se usa Inter (SIL OFL, licencia en
+   fonts/OFL-Inter.txt), la más parecida. Se registra con los nombres que pide style.css. */
+@font-face{font-family:"SF Pro Text";src:url(fonts/Inter.ttf) format("truetype");font-weight:100 900}
+@font-face{font-family:"SF Pro Display";src:url(fonts/Inter.ttf) format("truetype");font-weight:100 900}
+@font-face{font-family:"SF Pro";src:url(fonts/Inter.ttf) format("truetype");font-weight:100 900}
+
+/* tarjeta «Para la bici» (enlace con ADO O260T) */
+#bici-card{padding-bottom:6px}
+#bici-card .bici-v{display:flex;align-items:center;gap:8px;padding:0 16px 8px;font-size:17px;font-weight:600}
+#bici-card .bici-dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto}
+#bici-card .bici-row{display:flex;gap:10px;padding:8px 16px;border-top:.5px solid rgba(255,255,255,.14)}
+#bici-card .bici-ic{font-size:18px;line-height:1.2}
+#bici-card .bici-t{font-size:14px;font-weight:600}
+#bici-card .bici-d{font-size:13px;color:rgba(255,255,255,.6);margin-top:1px}
+#bici-card .bici-open{padding:9px 16px 6px;border-top:.5px solid rgba(255,255,255,.14);color:#64D2FF;font-size:15px;font-weight:500}
+
+/* franja esmerilada detrás de la barra de estado (como iOS): al hacer scroll el contenido no se mezcla con la hora */
+body::before { content: ""; position: fixed; top: 0; left: 0; right: 0; height: var(--sat, 0px); z-index: 60; pointer-events: none;
+  background: rgba(10, 20, 40, .55); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%); }

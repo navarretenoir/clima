@@ -1,0 +1,8 @@
+CLIMA para Windows — desarrollado por Javiera Navarrete
+
+Uso: escribe el nombre de tu comuna en el buscador de arriba y elígela. F5 actualiza, la rueda del mouse o
+arrastrar desplaza, y arrastrar de lado mueve el pronóstico por hora. El botón «i» muestra la información.
+El pronóstico se actualiza solo cada 15 minutos y, sin conexión, se muestra el último guardado.
+
+Datos: Open-Meteo (CC BY 4.0). Requiere conexión a internet (HTTP, puerto 80).
+Windows 95 necesita Internet Explorer 4 o superior instalado (por WinINet).
