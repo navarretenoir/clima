@@ -268,7 +268,7 @@ async function locateAndFetch(){
   const p=await phoneLoc();
   if(p){fetchFor(locFromCoords(p.lat,p.lon));return;}
   // sin permiso o sin señal: ubicación aproximada por IP (HTTPS) y, si no, Santiago
-  const ip=await httpJson("https://ipapi.co/json/");
+  const ip=await httpJson("https://ipwho.is/");
   if(ip&&typeof ip.latitude==="number") fetchFor(locFromCoords(ip.latitude,ip.longitude,ip.city,ip.region));
   else fetchFor(LOC||SANTIAGO);
 }
