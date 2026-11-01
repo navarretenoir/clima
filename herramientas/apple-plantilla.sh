@@ -26,7 +26,7 @@ cat > "$A/project.yml" <<Y
 # Desarrollado por Javiera Navarrete.
 name: $N
 options:
-  bundleIdPrefix: cl.javieranavarrete
+  bundleIdPrefix: io.github.navarretenoir
   deploymentTarget: { iOS: "15.0", macOS: "11.0" }
   createIntermediateGroups: true
 settings:

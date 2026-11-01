@@ -18,6 +18,10 @@
   <url type="homepage">https://github.com/navarretenoir/clima</url>
   <url type="vcs-browser">https://gitlab.com/navarretenoir/clima</url>
   <url type="bugtracker">https://gitlab.com/navarretenoir/clima/-/issues</url>
+  <screenshots>
+    <screenshot type="default"><image>https://raw.githubusercontent.com/navarretenoir/clima/main/screenshots/1.png</image></screenshot>
+    <screenshot><image>https://raw.githubusercontent.com/navarretenoir/clima/main/screenshots/2.png</image></screenshot>
+  </screenshots>
   <launchable type="desktop-id">io.github.navarretenoir.Clima.desktop</launchable>
   <provides><binary>clima</binary><binary>clima-app</binary></provides>
   <content_rating type="oars-1.1"/>
