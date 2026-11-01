@@ -1,0 +1,10 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  verificar:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y libgtk-4-dev libwebkitgtk-6.0-dev libjson-glib-dev libadwaita-1-dev libcurl4-openssl-dev libgeoclue-2-dev
+      - run: make -C c -j2 clima
+      - run: for f in $(git ls-files "*.js"); do node --check "$f"; done

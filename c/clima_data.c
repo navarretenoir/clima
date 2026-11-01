@@ -254,16 +254,16 @@ ClimaLoc *clima_loc_from_coords (gdouble lat, gdouble lon) {
 
 ClimaLoc *clima_current_location (void) {
     /* geolocalización por IP (thread-safe). GeoClue vive en el núcleo Python. */
-    JsonNode *node = http_get_json ("http://ip-api.com/json/?fields=city,lat,lon,regionName");
+    JsonNode *node = http_get_json ("https://ipwho.is/")   /* HTTPS: antes iba en claro (ip-api.com) */;
     ClimaLoc *loc = NULL;
     if (node) {
         JsonObject *o = json_node_get_object (node);
-        if (obj_has (o, "lat")) {
-            double lat = obj_num (o, "lat"), lon = obj_num (o, "lon");
+        if (obj_has (o, "latitude")) {
+            double lat = obj_num (o, "latitude"), lon = obj_num (o, "longitude");
             JsonObject *c = nearest_comuna (lat, lon);
             loc = g_new0 (ClimaLoc, 1);
             loc->name   = g_strdup (c ? obj_str (c, "name") : obj_str (o, "city"));
-            loc->region = g_strdup (c ? obj_str (c, "region") : obj_str (o, "regionName"));
+            loc->region = g_strdup (c ? obj_str (c, "region") : obj_str (o, "region"));
             loc->lat = lat; loc->lon = lon; loc->is_comuna = c != NULL;
             loc->rm_restr = c && obj_has (c, "rm_restr") && json_object_get_boolean_member (c, "rm_restr");
         }
