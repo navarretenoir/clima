@@ -2,12 +2,12 @@
 <component type="desktop-application">
   <id>org.kotone.Clima</id>
   <name>Clima</name>
-  <summary>App del tiempo centrada en Chile: sus 346 comunas, con cielo animado</summary>
+  <summary>Aplicación del clima de Chile: sus 346 comunas, con cielo animado</summary>
   <developer id="cl.javieranavarrete"><name>Javiera Navarrete</name></developer>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
   <description>
-    <p>Clima es una app del tiempo centrada en Chile. Muestra el tiempo actual, las próximas 24 horas y 10 días para cualquiera de las 346 comunas de Chile,
+    <p>Clima es una aplicación del clima de Chile. Muestra el tiempo actual, las próximas 24 horas y 10 días para cualquiera de las 346 comunas de Chile,
        con un cielo animado para cada condición, de día y de noche.</p>
     <p>Incluye alerta ambiental por MP2,5, restricción vehicular, aviso de riesgo de suspensión de clases, fase lunar y mareas.
        Datos de Open-Meteo. Sin publicidad ni rastreo.</p>

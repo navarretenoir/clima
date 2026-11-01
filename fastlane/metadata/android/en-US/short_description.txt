@@ -1,1 +1,1 @@
-Weather app focused on Chile: all 346 communes, with animated skies. No ads.
+Chilean weather app: all 346 communes, with animated skies. No ads.

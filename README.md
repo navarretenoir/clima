@@ -1,6 +1,6 @@
 # Clima
 
-App del tiempo **centrada en Chile**: el pronóstico para sus **346 comunas**, con un cielo animado para cada condición, de día y de noche.
+**Aplicación del clima de Chile**: el pronóstico para sus **346 comunas**, con un cielo animado para cada condición, de día y de noche.
 Alerta ambiental por MP2,5, restricción vehicular, suspensión de clases según el Mineduc, fase lunar y mareas.
 Sin publicidad, sin rastreadores, sin cuentas.
 
