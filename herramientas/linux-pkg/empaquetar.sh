@@ -178,10 +178,17 @@ L
   echo "$(appimage_entorno | sed 's/\$HERE/$SNAP/g')" >> "$P/lanzar"
   echo "exec \"\$SNAP/usr/bin/$BIN_GUI\" \"\$@\"" >> "$P/lanzar"
   chmod +x "$P/lanzar"
+  local REPO_URL; REPO_URL=$(git -C "$APP" remote get-url origin 2>/dev/null | sed 's/\.git$//')
   cat > "$P/meta/snap.yaml" <<Y
 name: $PAQUETE
 version: '$VERSION'
-summary: $RESUMEN
+summary: '$RESUMEN'
+title: $NOMBRE
+license: GPL-3.0-or-later
+website: $REPO_URL
+source-code: $REPO_URL
+issues: $REPO_URL/issues
+contact: $REPO_URL/issues
 description: |
   $DESCRIPCION
   Desarrollado por Javiera Navarrete.
@@ -201,10 +208,9 @@ plugs:
 apps:
   $PAQUETE:
     command: lanzar
-    desktop: meta/gui/$PAQUETE.desktop
     plugs: [network, wayland, x11, desktop, desktop-legacy, opengl, gsettings$SNAP_EXTRA]
 Y
-  mkdir -p "$P/data-dir/themes"
+  mkdir -p "$P/data-dir/themes"; chmod -R u+rwX,go+rX "$P"   # la Snap Store exige archivos legibles por todos
   rm -f "$OUT/${PAQUETE}_${VERSION}_amd64.snap"
   mksquashfs "$P" "$OUT/${PAQUETE}_${VERSION}_amd64.snap" -noappend -comp xz -all-root -no-xattrs -no-fragments -quiet >/dev/null
   echo "✔ Snap: $OUT/${PAQUETE}_${VERSION}_amd64.snap (instalar: sudo snap install --dangerous …)"

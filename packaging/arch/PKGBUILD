@@ -1,0 +1,31 @@
+# Maintainer: Javiera Navarrete <navarrete.noir@gmail.com>
+pkgname=clima
+pkgver=1.2.1
+pkgrel=1
+pkgdesc="Pronóstico para las 346 comunas de Chile, con cielo animado"
+arch=('x86_64')
+url="https://github.com/navarretenoir/clima"
+license=('GPL-3.0-or-later')
+depends=('gtk4' 'libadwaita' 'webkitgtk-6.0' 'json-glib' 'curl' 'geoclue')
+makedepends=('gcc' 'make' 'pkgconf')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/navarretenoir/clima/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('SKIP')   # actualizar con updpkgsums
+
+build() {
+  cd "clima-$pkgver"
+  make -C c ROOT=/usr/share/clima VERSION="$(cat VERSION)" EXTRA_CFLAGS="$CFLAGS $LDFLAGS -DCLIMA_LIBEXEC='\"/usr/libexec/clima\"'"
+}
+
+package() {
+  cd "clima-$pkgver"
+  local D="$pkgdir"
+  install -Dm755 c/clima "$D/usr/bin/clima"
+  install -Dm755 c/suspension-scraper "$D/usr/libexec/clima/suspension-scraper"
+  install -Dm755 c/restriccion-scraper "$D/usr/libexec/clima/restriccion-scraper"
+  install -d "$D/usr/share/clima"; cp -r ui data "$D/usr/share/clima/"
+  printf '%s\n' '#!/bin/sh' ': "${CLIMA_HWACCEL:=never}"; export CLIMA_HWACCEL' 'exec /usr/bin/clima --gui "$@"' > "$D/usr/bin/clima-app"; chmod 755 "$D/usr/bin/clima-app"
+  install -Dm644 linux/io.github.navarretenoir.Clima.desktop "$D/usr/share/applications/io.github.navarretenoir.Clima.desktop"
+  install -Dm644 linux/io.github.navarretenoir.Clima.metainfo.xml "$D/usr/share/metainfo/io.github.navarretenoir.Clima.metainfo.xml"
+  install -Dm644 linux/io.github.navarretenoir.Clima.svg "$D/usr/share/icons/hicolor/scalable/apps/io.github.navarretenoir.Clima.svg"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

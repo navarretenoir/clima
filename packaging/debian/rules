@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+D = $(CURDIR)/debian/clima
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	make -C c ROOT=/usr/share/clima VERSION="$$(cat VERSION)" EXTRA_CFLAGS="$(shell dpkg-buildflags --get CFLAGS) $(shell dpkg-buildflags --get CPPFLAGS) $(shell dpkg-buildflags --get LDFLAGS) -DCLIMA_LIBEXEC='\"/usr/libexec/clima\"'"
+
+override_dh_auto_install:
+	install -Dm755 c/clima "$(D)/usr/bin/clima"
+	install -Dm755 c/suspension-scraper "$(D)/usr/libexec/clima/suspension-scraper"
+	install -Dm755 c/restriccion-scraper "$(D)/usr/libexec/clima/restriccion-scraper"
+	install -d "$(D)/usr/share/clima"; cp -r ui data "$(D)/usr/share/clima/"
+	printf '%s\n' '#!/bin/sh' ': "$${CLIMA_HWACCEL:=never}"; export CLIMA_HWACCEL' 'exec /usr/bin/clima --gui "$$@"' > "$(D)/usr/bin/clima-app"; chmod 755 "$(D)/usr/bin/clima-app"
+	install -Dm644 linux/io.github.navarretenoir.Clima.desktop "$(D)/usr/share/applications/io.github.navarretenoir.Clima.desktop"
+	install -Dm644 linux/io.github.navarretenoir.Clima.metainfo.xml "$(D)/usr/share/metainfo/io.github.navarretenoir.Clima.metainfo.xml"
+	install -Dm644 linux/io.github.navarretenoir.Clima.svg "$(D)/usr/share/icons/hicolor/scalable/apps/io.github.navarretenoir.Clima.svg"
+
+override_dh_auto_clean:
+	-$(MAKE) -C c clean

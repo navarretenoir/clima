@@ -1,0 +1,17 @@
+Source: clima
+Section: utils
+Priority: optional
+Maintainer: Javiera Navarrete <navarrete.noir@gmail.com>
+Build-Depends: debhelper-compat (= 13), pkgconf, libgtk-4-dev, libadwaita-1-dev, libwebkitgtk-6.0-dev, libjson-glib-dev, libcurl4-openssl-dev, libgeoclue-2-dev
+Standards-Version: 4.7.0
+Homepage: https://github.com/navarretenoir/clima
+Rules-Requires-Root: no
+
+Package: clima
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, geoclue-2.0
+Description: Weather app for Chile: 346 communes, animated sky
+ Current weather, 24 hours and 10 days for the 346 communes of Chile, with an
+ animated sky, air-quality alerts (PM2.5), vehicle restriction, school-
+ suspension risk, moon phase and tides. Data from Open-Meteo. Includes the
+ clima command-line tool. Documentation and interface in Spanish.
