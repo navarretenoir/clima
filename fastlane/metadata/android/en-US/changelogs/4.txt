@@ -1,0 +1,1 @@
+Accessibility (zoom, keyboard and screen readers), a Retry button on network errors, and more robust loading when offline.

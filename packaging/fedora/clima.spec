@@ -1,5 +1,5 @@
 Name:           clima
-Version:        1.2.1
+Version:        1.3.0
 Release:        1%{?dist}
 Summary:        Pronóstico para las 346 comunas de Chile, con cielo animado
 License:        GPL-3.0-or-later
@@ -46,5 +46,8 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/io.github
 %{_libexecdir}/clima
 
 %changelog
+* Sun Nov 08 2026 Javiera Navarrete <navarrete.noir@gmail.com> - 1.3.0-1
+- Versión 1.3.0 (ver CHANGELOG.md).
+
 * Sun Nov 01 2026 Javiera Navarrete <navarrete.noir@gmail.com> - 1.2.1-1
 - Paquete inicial desde el código fuente.

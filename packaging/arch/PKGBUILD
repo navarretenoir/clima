@@ -1,6 +1,6 @@
 # Maintainer: Javiera Navarrete <navarrete.noir@gmail.com>
 pkgname=clima
-pkgver=1.2.1
+pkgver=1.3.0
 pkgrel=1
 pkgdesc="Pronóstico para las 346 comunas de Chile, con cielo animado"
 arch=('x86_64')

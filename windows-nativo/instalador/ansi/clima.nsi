@@ -6,7 +6,7 @@ SetCompressor /SOLID lzma
 !include "WinVer.nsh"
 
 !define NOMBRE "Clima"
-!define VERSION "1.0.2"
+!define VERSION "1.3.0"
 !define AUTORA "Javiera Navarrete"
 !define CLAVE_DESINST "Software\Microsoft\Windows\CurrentVersion\Uninstall\Clima"
 
@@ -16,7 +16,7 @@ InstallDir "$PROGRAMFILES\${NOMBRE}"
 InstallDirRegKey HKLM "Software\${AUTORA}\${NOMBRE}" "Carpeta"
 RequestExecutionLevel admin
 BrandingText "${NOMBRE} · desarrollado por ${AUTORA}"
-VIProductVersion "1.0.2.0"
+VIProductVersion "1.3.0.0"
 VIAddVersionKey /LANG=1034 "ProductName" "${NOMBRE}"
 VIAddVersionKey /LANG=1034 "CompanyName" "${AUTORA}"
 VIAddVersionKey /LANG=1034 "LegalCopyright" "(c) 2026 ${AUTORA}"

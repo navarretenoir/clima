@@ -1,0 +1,1 @@
+Accesibilidad (zoom, teclado y lectores de pantalla), botón Reintentar ante errores de red, y carga más robusta sin conexión.

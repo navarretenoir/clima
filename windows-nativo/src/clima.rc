@@ -11,8 +11,8 @@ IDR_COMUNAS RCDATA  "comunas.txt"
 #endif
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION     1,0,2,0
- PRODUCTVERSION  1,0,2,0
+ FILEVERSION     1,3,0,0
+ PRODUCTVERSION  1,3,0,0
  FILEFLAGSMASK   0x3fL
  FILEFLAGS       0x0L
  FILEOS          VOS__WINDOWS32
@@ -25,12 +25,12 @@ BEGIN
     BEGIN
       VALUE "CompanyName",      "Javiera Navarrete"
       VALUE "FileDescription",  "Clima - el tiempo para las comunas de Chile"
-      VALUE "FileVersion",      "1.0.2"
+      VALUE "FileVersion",      "1.3.0"
       VALUE "InternalName",     "Clima"
       VALUE "LegalCopyright",   "(c) 2026 Javiera Navarrete"
       VALUE "OriginalFilename", "Clima.exe"
       VALUE "ProductName",      "Clima"
-      VALUE "ProductVersion",   "1.0.2"
+      VALUE "ProductVersion",   "1.3.0"
       VALUE "Comments",         "Desarrollado por Javiera Navarrete. Datos: Open-Meteo."
     END
   END

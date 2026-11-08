@@ -25,8 +25,8 @@ android {
         applicationId = "org.kotone.clima"
         minSdk = 21          // Android 5.0: la mayor compatibilidad; lo moderno va protegido por versión
         targetSdk = 36
-        versionCode = 3
-        versionName = "1.2"
+        versionCode = 4
+        versionName = "1.3.0"
     }
     sourceSets["main"].apply {
         manifest.srcFile("AndroidManifest.xml")
