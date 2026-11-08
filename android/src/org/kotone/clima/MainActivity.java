@@ -80,6 +80,12 @@ public class MainActivity extends Activity {
             }
             // los márgenes del sistema llegan antes de que exista la página: se re-aplican al terminar de cargar
             @Override public void onPageFinished(WebView v, String url) { v.requestApplyInsets(); }
+            // si Android mata el proceso de la vista web (poca memoria), se recrea la pantalla en vez de cerrar la app
+            @Override public boolean onRenderProcessGone(WebView v, android.webkit.RenderProcessGoneDetail d) {
+                android.util.Log.w("ClimaWeb", "proceso de la vista web terminado (caída=" + d.didCrash() + ")");
+                ui.post(MainActivity.this::recreate);
+                return true;
+            }
         });
         web.setOnApplyWindowInsetsListener((v, ins) -> {
             float d = getResources().getDisplayMetrics().density;

@@ -67,14 +67,14 @@ body.clear-night{background-image:linear-gradient(180deg,#050b1f 0%,#0e1c42 45%,
 .sfield{position:relative;flex:1}
 .sfield .sicon{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:15px;height:15px;
   color:rgba(255,255,255,.55);pointer-events:none;z-index:2}
-.searchbar input{width:100%;background:rgba(118,128,150,.24);border:0;border-radius:11px;
+.searchbar input{width:100%;min-height:44px;-webkit-appearance:none;appearance:none;background:rgba(118,128,150,.24);border:0;border-radius:11px;
   color:#fff;padding:9px 14px 9px 33px;font-size:16px;font-family:inherit;outline:none;
   -webkit-user-select:text;user-select:text;backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
   transition:background .2s, box-shadow .2s}
 .searchbar input:focus{background:rgba(118,128,150,.34);box-shadow:0 0 0 2px rgba(255,255,255,.18)}
 .searchbar input::placeholder{color:rgba(255,255,255,.5)}
 .searchbar button{background:rgba(118,128,150,.24);border:0;border-radius:11px;color:#fff;
-  width:38px;height:38px;cursor:pointer;backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  width:44px;height:44px;cursor:pointer;backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
   flex:0 0 auto;display:grid;place-items:center;transition:transform .12s, background .2s}
 .searchbar button svg{width:16px;height:16px}
 .searchbar button:hover{background:rgba(118,128,150,.34)}
@@ -230,3 +230,10 @@ body.clear-night{background-image:linear-gradient(180deg,#050b1f 0%,#0e1c42 45%,
 
 /* crédito al final, pequeño y discreto */
 .credito{text-align:center;font-size:11px;line-height:14px;color:rgba(255,255,255,.28);margin:14px 0 6px;letter-spacing:.01em}
+
+/* foco visible para teclado y lectores de pantalla; botón de reintento */
+.day:focus-visible,.sug:focus-visible,.back:focus-visible,.retry:focus-visible,#loc:focus-visible,#q:focus-visible{outline:2px solid #fff;outline-offset:-2px}
+.retry{margin-top:6px;min-height:44px;padding:10px 22px;border-radius:22px;border:0;background:rgba(255,255,255,.2);color:#fff;font:inherit;font-weight:600;cursor:pointer}
+.retry:active{background:rgba(255,255,255,.32)}
+.sug{min-height:44px}
+#q::-webkit-search-cancel-button{display:none}

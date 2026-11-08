@@ -172,7 +172,7 @@ function render(data){
     const span=Math.max(gMax-gMin,1), left=((lo-gMin)/span)*100,wdt=((hi-lo)/span)*100;
     const pp=d.precipitation_probability_max[i]||0;
     const dot=i===0?`<div class="now" style="left:${Math.min(100,Math.max(0,((c.temp-gMin)/(gMax-gMin))*100))}%"></div>`:"";
-    daily+=`<div class="day" data-day="${i}"><div class="name">${dayShort(d.time[i],i)}</div>`+
+    daily+=`<div class="day" data-day="${i}" role="button" tabindex="0" aria-label="${esc(dayLong(d.time[i],i))}: ${esc(wmo(d.weather_code[i],1)[1])}, mínima ${R(lo)} grados, máxima ${R(hi)} grados. Ver detalle por hora"><div class="name">${dayShort(d.time[i],i)}</div>`+
       `<div class="i">${di}${pp>=20?`<div class="p">${pp}%</div>`:""}</div>`+
       `<div class="lo">${R(lo)}°</div>`+
       `<div class="bar"><div class="fill" style="left:${left}%;width:${Math.max(wdt,6)}%;background:${tgrad(lo,hi)}"></div>${dot}</div>`+
@@ -187,7 +187,7 @@ function render(data){
   // Garantía: SIEMPRE hay un comentario del clima del día (nunca se omite el badge).
   if(!ctx){ ctx={icon:"", text:`${c.text||"Tiempo"} ahora; máxima de ${R(data.today.max)}° y mínima de ${R(data.today.min)}° hoy.`, kind:"steady"}; }
   const ctxLine=`<div class="ctx">${esc(ctx.text)}</div>`;
-  const feels=c.feels, vis=(h.visibility&&h.visibility.length)?(h.visibility[start]/1000).toFixed(1):"—";
+  const feels=c.feels, visOk=h.visibility&&typeof h.visibility[start]==="number", vis=visOk?(h.visibility[start]/1000).toFixed(1):"—";
   const uv=data.today.uv, uvTxt=uv<3?"Bajo":uv<6?"Moderado":uv<8?"Alto":uv<11?"Muy alto":"Extremo";
 
   document.getElementById("content").innerHTML=`
@@ -218,7 +218,7 @@ function render(data){
           <div class="tile"><div class="th">${ic('drop')} Humedad</div><div class="tv">${c.humidity}%</div><div class="ts">Nubosidad ${c.cloud}%</div></div>
           <div class="tile"><div class="th">${ic('dew')} Punto de rocío</div><div class="tv">${c.dew!=null?c.dew+"°":"—"}</div><div class="ts">${c.dew!=null&&c.dew>=16?"Bochornoso":c.dew!=null&&c.dew>=10?"Cómodo":"Aire seco"}</div></div>
           <div class="tile"><div class="th">${ic('uv')} Índice UV</div><div class="tv">${R(uv)}</div><div class="tl">${uvTxt}</div><div class="meter uv"><div class="dot" style="left:${Math.min(100,uv/11*100)}%"></div></div><div class="ts">${uv>=6?"Usa protección solar entre 11:00 y 17:00.":"Bajo el resto del día."}</div></div>
-          <div class="tile"><div class="th">${ic('eye')} Visibilidad</div><div class="tv">${vis}<span class="u"> km</span></div><div class="ts">${vis>10?"Perfectamente clara":"Reducida"}</div></div>
+          <div class="tile"><div class="th">${ic('eye')} Visibilidad</div><div class="tv">${vis}<span class="u"> km</span></div><div class="ts">${!visOk?"Sin dato":vis>10?"Perfectamente clara":"Reducida"}</div></div>
           <div class="tile"><div class="th">${ic('gauge')} Presión</div>${gaugeSvg(c.pressure)}<div class="ts" style="text-align:center">Nivel del mar</div></div>
           <div class="tile"><div class="th">${ic('sunset')} Puesta de sol</div><div class="tv">${hm(data.today.sunset)}</div>${sunArcSvg(data.today.sunrise,data.today.sunset)}<div class="ts">Amanecer: ${hm(data.today.sunrise)}</div></div>
           ${ambientalTiles(data.ambiental,"bottom")}
@@ -229,7 +229,9 @@ function render(data){
     <div class="credito">Desarrollado por Javiera Navarrete</div>
   `;
   document.querySelectorAll(".day").forEach(el=>{
-    el.addEventListener("click",()=>openDay(parseInt(el.dataset.day,10)));
+    const abrir=()=>openDay(parseInt(el.dataset.day,10));
+    el.addEventListener("click",abrir);
+    el.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();abrir();}});
   });
 }
 
@@ -379,16 +381,20 @@ function openDay(i){
       </div>
     </div>`;
   ov.classList.add("show");
-  document.getElementById("dback").onclick=closeDay;
+  ov.setAttribute("role","dialog"); ov.setAttribute("aria-modal","true"); ov.setAttribute("aria-label","Detalle del día");
+  const bk=document.getElementById("dback"); bk.onclick=closeDay; try{bk.focus({preventScroll:true});}catch(e){}
 }
-function closeDay(){const ov=document.getElementById("overlay");ov.classList.remove("show");setTimeout(()=>ov.innerHTML="",300);}
+function closeDay(){const ov=document.getElementById("overlay");ov.classList.remove("show");setTimeout(()=>{if(!ov.classList.contains("show"))ov.innerHTML="";},300);}
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&document.getElementById("overlay").classList.contains("show"))closeDay();});
 
 // ===== callbacks del host =====
 window.onClimaData=function(data){ setLoading(false); render(data); };
 window.onError=function(msg){
   setLoading(false);
   document.getElementById("content").innerHTML=
-    `<div class="err">No se pudo cargar el clima.<br><span style="opacity:.6">${esc(msg||"")}</span><br><br>¿Hay conexión a internet?</div>`;
+    `<div class="err" role="alert">No se pudo cargar el clima.<br><span style="opacity:.6">${esc(msg||"")}</span><br><br>Revisa tu conexión a internet e inténtalo de nuevo.<br><button id="retry" class="retry">Reintentar</button></div>`;
+  const r=document.getElementById("retry");
+  if(r) r.onclick=()=>{setLoading(true);post("refresh");};
 };
 window.onSearchResults=function(list){ renderSuggest(list); };
 
@@ -403,10 +409,15 @@ let suggestBox=null, searchT=null;
 function renderSuggest(list){
   const box=document.getElementById("suggest");
   if(!list||!list.length){box.classList.remove("show");box.innerHTML="";return;}
-  box.innerHTML=list.map(c=>`<div class="sug" data-lat="${c.lat}" data-lon="${c.lon}" data-name="${esc(c.name)}" data-region="${esc(c.region||"")}">`+
+  box.innerHTML=list.map(c=>`<div class="sug" role="option" tabindex="0" data-lat="${c.lat}" data-lon="${c.lon}" data-name="${esc(c.name)}" data-region="${esc(c.region||"")}">`+
     `<span class="sn">${esc(c.name)}</span><span class="sr">${esc(c.region||"")}</span></div>`).join("");
   box.classList.add("show");
   box.querySelectorAll(".sug").forEach(el=>{
+    el.onkeydown=e=>{
+      if(e.key==="Enter"||e.key===" "){e.preventDefault();el.click();}
+      else if(e.key==="ArrowDown"&&el.nextElementSibling){e.preventDefault();el.nextElementSibling.focus();}
+      else if(e.key==="ArrowUp"){e.preventDefault();(el.previousElementSibling||document.getElementById("q")).focus();}
+    };
     el.onclick=()=>{
       document.getElementById("q").value=el.dataset.name;
       box.classList.remove("show");
@@ -459,6 +470,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     if(v.length<2){document.getElementById("suggest").classList.remove("show");return;}
     searchT=setTimeout(()=>post("search",{q:v}),130);
   });
+  q.addEventListener("keydown",e=>{ if(e.key==="ArrowDown"){const f=document.querySelector("#suggest .sug");if(f){e.preventDefault();f.focus();}} });
   q.addEventListener("keydown",e=>{ if(e.key==="Escape"){document.getElementById("suggest").classList.remove("show");q.blur();} });
   document.getElementById("loc").onclick=()=>{setLoading(true);document.getElementById("suggest").classList.remove("show");post("locate");};
   document.addEventListener("click",e=>{ if(!e.target.closest(".searchbar"))document.getElementById("suggest").classList.remove("show"); });

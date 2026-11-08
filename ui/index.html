@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Clima</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -30,14 +30,14 @@
       </linearGradient>
     </defs>
   </svg>
-  <canvas id="fx"></canvas>
+  <canvas id="fx" aria-hidden="true"></canvas>
   <div id="pull"><div class="pspin"></div></div>
   <div id="app">
     <div class="searchbar">
       <div class="sfield">
         <svg class="sicon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6.8" cy="6.8" r="4.8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.4 10.4l3.6 3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        <input id="q" type="text" placeholder="Buscar ciudad de Chile" autocomplete="off" spellcheck="false">
-        <div id="suggest"></div>
+        <input id="q" type="search" placeholder="Buscar ciudad de Chile" aria-label="Buscar ciudad de Chile" autocomplete="off" spellcheck="false" enterkeyhint="search">
+        <div id="suggest" role="listbox" aria-label="Sugerencias de ciudades"></div>
       </div>
       <button id="loc" title="Mi ubicación" aria-label="Mi ubicación">
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M14.2 1.8L1.9 7.1c-.5.2-.4.9.1 1l5 1 1 5c.1.5.8.6 1 .1l5.3-12.3c.2-.4-.2-.8-.6-.6z" fill="currentColor"/></svg>

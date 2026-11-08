@@ -20,6 +20,11 @@ const phoneLoc=()=>new Promise(r=>{const id=++seq;waiting[id]=r;A.locate(id);});
 const oficial=(loc,restr)=>new Promise(r=>{const id=++seq;waiting[id]=t=>{try{r(JSON.parse(t)||{});}catch(e){r({});}};
   A.oficial(id,loc.region||"",loc.name||"",!!restr);});
 
+// Las fuentes secundarias (aire, mareas, Mineduc, airerm) no deben retrasar el pronóstico: pasado el tope
+// se muestra sin ellas (la tarjeta correspondiente queda como «sin dato») en vez de dejar la pantalla cargando.
+const TOPE_MS=+window.__climaTopeMs||9000;   // ajustable sólo para las pruebas
+const conTope=(p,fallback,ms=TOPE_MS)=>Promise.race([Promise.resolve(p).catch(()=>fallback),new Promise(r=>setTimeout(()=>r(fallback),ms))]);
+
 // ---------------------------------------------------------------- comunas
 let COMUNAS=null;
 function comunas(){if(!COMUNAS){try{COMUNAS=JSON.parse(A.asset("data/comunas_cl.json"));}catch(e){COMUNAS=[];}}return COMUNAS;}
@@ -217,7 +222,7 @@ async function analyze(loc){
   if(!w||!w.current||!w.daily) return null;
   const cur=w.current, day=w.daily, code=cur.weather_code|0, m=WMO[code]||["☁️","—","cloud"], R=Math.round;
   // aire, mareas y fuentes oficiales en paralelo (en escritorio eran secuenciales)
-  const [[air,key],tides,of]=await Promise.all([buildAir(loc),buildTides(loc),oficial(loc,restrRige(loc))]);
+  const [[air,key],tides,of]=await Promise.all([conTope(buildAir(loc),[null,"normal"]),conTope(buildTides(loc),null),conTope(oficial(loc,restrRige(loc)),{})]);
   return {
     location:{name:loc.name,region:loc.region||"",lat:loc.lat,lon:loc.lon,comuna:!!loc.comuna,rm_restr:!!loc.rm_restr},
     current:{temp:R(cur.temperature_2m||0),feels:R(cur.apparent_temperature||0),icon:m[0],text:m[1],class:m[2],is_day:!!cur.is_day,
@@ -252,6 +257,12 @@ async function estadoMetro(){
 // ---------------------------------------------------------------- ciclo de la app
 let LOC=null, busy=false, pending=null, manual=false, lastFetch=0;
 function cachedData(){const t=A.cacheLoad();if(!t)return null;try{const d=JSON.parse(t);d.cached=true;return d;}catch(e){return null;}}
+// ¿el caché corresponde al lugar pedido? (a ~5 km a la redonda). Sin esto, buscar otra ciudad sin red
+// mostraba el clima de la ciudad anterior como si fuera la nueva.
+function mismoLugar(d,loc){
+  const l=d&&d.location; if(!l||typeof l.lat!=="number"||!loc) return false;
+  return Math.abs(l.lat-loc.lat)<0.05&&Math.abs(l.lon-loc.lon)<0.05;
+}
 async function fetchFor(loc){
   if(busy){pending=loc;return;}
   busy=true;
@@ -259,7 +270,9 @@ async function fetchFor(loc){
     const d=await analyze(loc);
     if(d){LOC=loc;lastFetch=Date.now();A.cacheSave(JSON.stringify(d));window.onClimaData(d);
       const am=d.ambiental;console.info(`datos ${d.location.name}: ${d.current.temp}° · clases «${am.suspension.nivel}» (oficial ${am.suspension.oficial}) · restricción ${am.restriccion.aplica?am.restriccion.level:"no aplica"} · ${d.context.text}`);}
-    else{const c=cachedData(); if(c) window.onClimaData(c); else window.onError("sin conexión y sin datos en caché");}
+    else{const c=cachedData();
+      if(c&&mismoLugar(c,loc)) window.onClimaData(c);
+      else window.onError(c?`sin conexión: no hay datos guardados de ${loc.name||"este lugar"}`:"sin conexión y sin datos guardados");}
   }catch(e){window.onError(String(e&&e.message||e));}
   busy=false;
   if(pending){const p=pending;pending=null;fetchFor(p);}
