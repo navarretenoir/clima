@@ -226,7 +226,6 @@ function render(data){
       </div>
     </div>
     <div class="updated">${data.cached?'<span class="cached">⚠ Sin conexión · datos guardados</span> · ':''}Actualizado ${stamp(data.fetched)} · Datos de Open-Meteo · GEC-MMA · MTT</div>
-    <div class="credito">Desarrollado por Javiera Navarrete</div>
   `;
   document.querySelectorAll(".day").forEach(el=>{
     const abrir=()=>openDay(parseInt(el.dataset.day,10));

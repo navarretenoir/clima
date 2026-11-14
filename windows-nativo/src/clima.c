@@ -413,7 +413,7 @@ static void pintar(HDC dc, int w, int h) {
         }
         y += fila * nd + 22;
     }
-    texto_en(dc, f_chica, "Datos: Open-Meteo (CC BY 4.0) · Desarrollado por Javiera Navarrete", w / 2, y, RGB(0xDD, 0xE6, 0xF5), DT_CENTER);
+    texto_en(dc, f_chica, "Datos: Open-Meteo (CC BY 4.0)", w / 2, y, RGB(0xDD, 0xE6, 0xF5), DT_CENTER);
     y += 30;
     g_scrollMax = y + g_scroll - h; if (g_scrollMax < 0) g_scrollMax = 0;
 }
@@ -491,7 +491,7 @@ static LRESULT CALLBACK proc_busca(HWND h, UINT m, WPARAM wp, LPARAM lp) {
 static int limitar(int v, int max) { return v < 0 ? 0 : v > max ? max : v; }
 
 static void acerca(void) {
-    MessageBox(g_win, T("Clima 1.0 para Windows\n\nDesarrollado por Javiera Navarrete.\n\n"
+    MessageBox(g_win, T("Clima 1.3 para Windows\n\n"
         "Pronóstico de Open-Meteo (CC BY 4.0) para las 346 comunas de Chile.\n"
         "Sin publicidad ni rastreo: sólo se consulta el pronóstico de la comuna elegida.\n\n"
         "F5 actualizar · rueda o arrastre para desplazar · Esc cierra el buscador"), TEXT("Acerca de Clima"), MB_OK | MB_ICONINFORMATION);
