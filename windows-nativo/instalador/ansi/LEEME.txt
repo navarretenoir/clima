@@ -1,4 +1,4 @@
-CLIMA para Windows — desarrollado por Javiera Navarrete
+CLIMA para Windows
 
 Uso: escribe el nombre de tu comuna en el buscador de arriba y elígela. F5 actualiza, la rueda del mouse o
 arrastrar desplaza, y arrastrar de lado mueve el pronóstico por hora. El botón «i» muestra la información.

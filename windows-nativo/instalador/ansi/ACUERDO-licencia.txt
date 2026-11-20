@@ -1,5 +1,5 @@
 ﻿ACUERDO DE USO — CLIMA
-Desarrollado por Javiera Navarrete · Versión 1.3.0 · 2026
+Versión 1.3.0 · 2026
 
 1. Uso. Puedes instalar y usar Clima sin costo en los equipos que quieras, para fines personales o
    profesionales. Puedes compartir el instalador original sin modificarlo, citando a su autora.
