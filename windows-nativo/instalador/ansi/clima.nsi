@@ -6,7 +6,7 @@ SetCompressor /SOLID lzma
 !include "WinVer.nsh"
 
 !define NOMBRE "Clima"
-!define VERSION "1.3.0"
+!define VERSION "1.0.2"
 !define AUTORA "Javiera Navarrete"
 !define CLAVE_DESINST "Software\Microsoft\Windows\CurrentVersion\Uninstall\Clima"
 

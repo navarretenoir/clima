@@ -232,7 +232,7 @@ body.clear-night{background-image:linear-gradient(180deg,#050b1f 0%,#0e1c42 45%,
 .credito{text-align:center;font-size:11px;line-height:14px;color:rgba(255,255,255,.28);margin:14px 0 6px;letter-spacing:.01em}
 
 /* foco visible para teclado y lectores de pantalla; botón de reintento */
-.day:focus-visible,.sug:focus-visible,.back:focus-visible,.retry:focus-visible,#loc:focus-visible,#q:focus-visible{outline:2px solid #fff;outline-offset:-2px}
+.day:focus-visible,.sug:focus-visible,.back:focus-visible,.retry:focus-visible,#loc:focus-visible,#q:focus-visible,button:focus-visible,[role="button"]:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .retry{margin-top:6px;min-height:44px;padding:10px 22px;border-radius:22px;border:0;background:rgba(255,255,255,.2);color:#fff;font:inherit;font-weight:600;cursor:pointer}
 .retry:active{background:rgba(255,255,255,.32)}
 .sug{min-height:44px}
