@@ -15,8 +15,8 @@ OutFile "..\dist\Clima-${VERSION}-instalador.exe"
 InstallDir "$PROGRAMFILES\${NOMBRE}"
 InstallDirRegKey HKLM "Software\${AUTORA}\${NOMBRE}" "Carpeta"
 RequestExecutionLevel admin
-BrandingText "${NOMBRE} · desarrollado por ${AUTORA}"
-VIProductVersion "1.0.2.0"
+BrandingText "${NOMBRE}"
+VIProductVersion "1.3.0.0"
 VIAddVersionKey /LANG=1034 "ProductName" "${NOMBRE}"
 VIAddVersionKey /LANG=1034 "CompanyName" "${AUTORA}"
 VIAddVersionKey /LANG=1034 "LegalCopyright" "(c) 2026 ${AUTORA}"
@@ -27,7 +27,7 @@ VIAddVersionKey /LANG=1034 "ProductVersion" "${VERSION}"
 !define MUI_ICON "..\src\clima.ico"
 !define MUI_UNICON "..\src\clima.ico"
 !define MUI_WELCOMEPAGE_TITLE "Bienvenida a ${NOMBRE}"
-!define MUI_WELCOMEPAGE_TEXT "Clima es una aplicación del clima de Chile. Muestra el tiempo de cualquiera de las 346 comunas de Chile, con un cielo animado que cambia según la condición y la hora del día.$\r$\n$\r$\nCaracterísticas:$\r$\n  • Temperatura actual, sensación, humedad, viento, UV, presión y salida/puesta de sol$\r$\n  • Pronóstico por hora (24 h) y para 10 días$\r$\n  • Buscador de comunas: escribe el nombre y elige$\r$\n  • Funciona sin conexión con el último pronóstico guardado$\r$\n  • Sin publicidad ni rastreo$\r$\n$\r$\nCompatible con Windows 95, 98, Me, 2000, XP, Vista, 7, 8, 10 y 11.$\r$\n$\r$\nDesarrollado por ${AUTORA}."
+!define MUI_WELCOMEPAGE_TEXT "Clima es una aplicación del clima de Chile. Muestra el tiempo de cualquiera de las 346 comunas de Chile, con un cielo animado que cambia según la condición y la hora del día.$\r$\n$\r$\nCaracterísticas:$\r$\n  • Temperatura actual, sensación, humedad, viento, UV, presión y salida/puesta de sol$\r$\n  • Pronóstico por hora (24 h) y para 10 días$\r$\n  • Buscador de comunas: escribe el nombre y elige$\r$\n  • Funciona sin conexión con el último pronóstico guardado$\r$\n  • Sin publicidad ni rastreo$\r$\n$\r$\nCompatible con Windows 95, 98, Me, 2000, XP, Vista, 7, 8, 10 y 11."
 !define MUI_LICENSEPAGE_TEXT_TOP "Lee el acuerdo de uso antes de instalar."
 !define MUI_FINISHPAGE_RUN "$INSTDIR\Clima.exe"
 !define MUI_FINISHPAGE_RUN_TEXT "Abrir Clima ahora"
@@ -64,7 +64,7 @@ Section "Clima" SEC_APP
   WriteRegStr HKLM "${CLAVE_DESINST}" "DisplayIcon" "$INSTDIR\Clima.exe"
   WriteRegStr HKLM "${CLAVE_DESINST}" "InstallLocation" "$INSTDIR"
   WriteRegStr HKLM "${CLAVE_DESINST}" "UninstallString" '"$INSTDIR\Desinstalar.exe"'
-  WriteRegStr HKLM "${CLAVE_DESINST}" "Comments" "Desarrollado por ${AUTORA}"
+  WriteRegStr HKLM "${CLAVE_DESINST}" "Comments" "Pronóstico del tiempo para Chile"
   WriteRegDWORD HKLM "${CLAVE_DESINST}" "NoModify" 1
   WriteRegDWORD HKLM "${CLAVE_DESINST}" "NoRepair" 1
 SectionEnd
