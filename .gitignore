@@ -15,3 +15,12 @@ herramientas/j2me/bc-j2me-src
 c/clima
 c/suspension-scraper
 c/restriccion-scraper
+# empaquetado y artefactos Windows
+windows/dist/
+windows/app/ui/
+windows/app/data/
+windows/screenshots-ms-store/
+screenshots/
+historico_santiago_50_anios/
+restriccion_vehicular/
+semaforo_aire/

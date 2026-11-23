@@ -1,0 +1,9 @@
+{
+  "name": "clima",
+  "productName": "Clima",
+  "version": "1.3.2",
+  "description": "El tiempo estilo Apple Weather, con datos de Chile (port a Windows x64)",
+  "main": "src/main.js",
+  "author": "Javiera Navarrete",
+  "license": "UNLICENSED"
+}

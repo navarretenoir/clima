@@ -1,5 +1,8 @@
 # Cambios / Changelog
 
+## 1.3.2 (2026-11-23) — Windows
+- Barra de scroll vertical: ahora es transparente (antes se veía sólida/gris sobre el fondo de la app).
+
 ## 1.3.0 (2026-11-08)
 - Accesibilidad: el zoom de la interfaz ya no está bloqueado; el buscador tiene nombre accesible; los días del pronóstico y las sugerencias de ciudad se pueden usar con teclado y lector de pantalla (Enter/Espacio, flechas, Escape para cerrar el detalle); el botón de ubicación y el buscador miden 44 px; foco visible.
 - Error de red: la pantalla de error ahora trae un botón «Reintentar».
